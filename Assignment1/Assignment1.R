@@ -1,13 +1,5 @@
-// ...existing code from Assignment1.R...
 
-// This is a placeholder for the actual content of Assignment1.R
-// The original content should be placed here after moving the file.
-
-// Additional comments or code can be added as needed.
-
-// End of Assignment1.R content
-
-# Name: Assignment1.R
+# Name: Judah Alter
 # Description: This script answers basic R syntax and operations from Assignment 1.
 # All work is completed by Judah Alter.
 
