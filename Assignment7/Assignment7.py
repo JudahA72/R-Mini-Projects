@@ -11,3 +11,14 @@ plt.plot(x, np.sqrt(x), color='green')
 plt.xlabel('x')
 plt.ylabel('f1')
 plt.show()
+
+# 2. Scatterplot of x and y, blue mean point, red lines at y=5 and y=15
+x = [5,6,7,5,10,12,14]
+y = [4,9,2,3,4,5,20]
+plt.scatter(x, y)
+plt.scatter(np.mean(x), np.mean(y), color='blue')
+plt.axhline(5, color='red')
+plt.axhline(15, color='red')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.show()
