@@ -14,3 +14,8 @@ plot(x, y, xlab="x", ylab="y")
 points(mean(x), mean(y), col="blue", pch=1)
 abline(h=5, col="red")
 abline(h=15, col="red")
+
+# 3a. Relative frequency histogram of Life Expectancy from state.x77
+df = as.data.frame(state.x77)
+hist(df$"Life Exp", probability=TRUE, col="grey", xlab="Life Expectancy", main="Histogram of Life Expectancy")
+

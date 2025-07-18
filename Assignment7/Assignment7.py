@@ -22,3 +22,13 @@ plt.axhline(15, color='red')
 plt.xlabel('x')
 plt.ylabel('y')
 plt.show()
+
+# 3a. Relative frequency histogram of Life Expectancy from statesx77.txt
+import pandas as pd
+df = pd.read_csv('Datasets/UseCase/statesx77.txt', delim_whitespace=True)
+plt.hist(df['Life.Exp'], density=True)
+plt.xlabel('Life Expectancy')
+plt.ylabel('Density')
+plt.title('Histogram of Life Expectancy')
+plt.show()
+
