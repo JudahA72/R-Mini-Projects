@@ -19,3 +19,16 @@ abline(h=15, col="red")
 df = as.data.frame(state.x77)
 hist(df$"Life Exp", probability=TRUE, col="grey", xlab="Life Expectancy", main="Histogram of Life Expectancy")
 
+
+# 3b. Boxplot of Life Expectancy from state.x77
+df = as.data.frame(state.x77)
+boxplot(df$"Life Exp", col="grey", main="Boxplot of Life Expectancy", ylab="Life Expectancy")
+
+# 3c. Kernel density estimate of Life Expectancy from state.x77
+df = as.data.frame(state.x77)
+plot(density(df$"Life Exp"), main="Kernel Density Estimate of Life Expectancy", xlab="Life Expectancy")
+
+# 4a. Side-by-side boxplots of dopamine level by status from schizo.xlsx
+library(readxl)
+schizo = read_excel("Datasets/UseCase/schizo.xlsx")
+boxplot(Dopamine ~ Status, data=schizo, col="grey", main="Non-psychotic vs Psychotic", xlab="Status", ylab="Dopamine")

@@ -25,10 +25,35 @@ plt.show()
 
 # 3a. Relative frequency histogram of Life Expectancy from statesx77.txt
 import pandas as pd
-df = pd.read_csv('Datasets/UseCase/statesx77.txt', delim_whitespace=True)
-plt.hist(df['Life.Exp'], density=True)
+df = pd.read_csv('Datasets:UseCase/statesx77.txt', delim_whitespace=True)
+plt.hist(df['Life_Exp'], density=True)
 plt.xlabel('Life Expectancy')
 plt.ylabel('Density')
 plt.title('Histogram of Life Expectancy')
 plt.show()
 
+# 3b. Boxplot of Life Expectancy from statesx77.txt
+import pandas as pd
+df = pd.read_csv('Datasets:UseCase/statesx77.txt', sep='\s+')
+plt.boxplot(df['Life_Exp'])
+plt.title('Boxplot of Life Expectancy')
+plt.ylabel('Life Expectancy')
+plt.show()
+
+# 3c. Kernel density estimate of Life Expectancy from statesx77.txt
+import seaborn as sns
+sns.kdeplot(df['Life_Exp'])
+plt.title('Kernel Density Estimate of Life Expectancy')
+plt.xlabel('Life Expectancy')
+plt.ylabel('Density')
+plt.show()
+
+# 4a. Side-by-side boxplots of dopamine level by status from schizo.xlsx
+import pandas as pd
+import seaborn as sns
+schizo = pd.read_excel('Datasets:UseCase/schizo.xlsx')
+sns.boxplot(x='Status', y='Dopamine', data=schizo, color='grey')
+plt.title('Non-Psychotic vs Psychotic')
+plt.xlabel('Status')
+plt.ylabel('Dopamine')
+plt.show()
