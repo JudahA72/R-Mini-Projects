@@ -11,7 +11,7 @@ import statsmodels.api as sm
 from statsmodels.stats.outliers_influence import summary_table
 
 # 1. Read data and fit multiple linear regression
-df = pd.read_csv('../Datasets:UseCase/properties.txt', sep='\s+', header=None)
+df = pd.read_csv('Datasets:UseCase/properties.txt', sep='\s+', header=None)
 df.columns = ['RentalRate', 'Age', 'TaxRate', 'VacancyRate', 'Cost']
 X = df[['Age', 'TaxRate', 'VacancyRate', 'Cost']]
 y = df['RentalRate']
