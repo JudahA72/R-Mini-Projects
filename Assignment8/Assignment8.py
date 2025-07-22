@@ -36,3 +36,26 @@ print("Point prediction:", point_pred[0])
 pred = q.get_prediction(new_X)
 conf_int = pred.conf_int(alpha=0.05)
 print("95% CI for mean prediction:", conf_int[0])
+
+# 7. 95% prediction interval for one property
+pred_int = pred.conf_int(obs=True)
+print("95% prediction interval for one property:", pred_int[0])
+
+# 8. Calculate the mean of the residuals
+residuals_q = q.resid
+print("Mean of residuals:", residuals_q.mean())
+
+# 9. Plot predicted values vs residuals
+import matplotlib.pyplot as plt
+plt.scatter(q.fittedvalues, residuals_q)
+plt.xlabel("Predicted Values")
+plt.ylabel("Residuals")
+plt.title("Residuals vs Predicted Values")
+plt.axhline(0, color='red')
+plt.show()
+
+# 10. Histogram of the residuals
+plt.hist(residuals_q, color='grey')
+plt.title("Histogram of Residuals")
+plt.xlabel("Residuals")
+plt.show()

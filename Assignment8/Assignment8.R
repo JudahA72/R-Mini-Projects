@@ -22,3 +22,18 @@ print(predict(q, newdata))
 
 # 6. 95% confidence interval for mean rental rate prediction
 print(predict(q, newdata, interval="confidence", level=0.95))
+
+# 7. 95% prediction interval for one property
+print(predict(q, newdata, interval="prediction", level=0.95))
+
+# 8. Calculate the mean of the residuals
+residuals_q <- residuals(q)
+print(mean(residuals_q))
+
+# 9. Plot predicted values vs residuals
+plot(predict(q), residuals_q, xlab="Predicted Values", ylab="Residuals", main="Residuals vs Predicted Values")
+abline(h=0, col="red")
+
+# 10. Histogram of the residuals
+hist(residuals_q, col="grey", main="Histogram of Residuals", xlab="Residuals")
+
