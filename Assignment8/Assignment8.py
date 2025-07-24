@@ -2,9 +2,6 @@
 # Description: This script answers basic python syntax and operations from Assignment 8.
 # All work is completed by Judah Alter.
 
-# Name: Assignment8.py
-# Description: This script answers basic python syntax and operations from Assignment 8.
-# All work is completed by Judah Alter.
 
 import pandas as pd
 import statsmodels.api as sm
