@@ -1,58 +1,78 @@
 # Assignment 8
 
-## Overview
+This folder contains solutions for Assignment 8 in both R and Python. Each question is answered with concise code and comments, matching assignment requirements.
 
-This assignment demonstrates multiple linear regression analysis in both **R** and **Python** using a commercial real estate dataset. The dataset (`properties.txt`) contains information on rental rates, property age, tax rates, vacancy rates, and property costs for commercial properties in a metropolitan area.
+## Contents
+- `Assignment8.r`: R solutions for all questions
+- `Assignment8.py`: Python solutions for all questions
+- `Datasets/UseCase/properties.txt`: Dataset for regression analysis
 
-Both R and Python scripts answer the following:
+## Questions & Solutions
 
-1. **Fit a multiple linear regression model** using rental rate as the response and the other variables as predictors.
-2. **Print the model summary.**
-3. **Print 99% confidence intervals** for the regression parameters.
-4. **Print the coefficient estimates.**
-5. **Predict the mean rental rate** for a property with specified characteristics.
-6. **Print a 95% confidence interval** for the mean rental rate prediction.
-7. **Print a 95% prediction interval** for a single property.
-8. **Calculate the mean of the residuals.**
-9. **Plot predicted values vs. residuals** (with a horizontal line at 0).
-10. **Create a histogram of the residuals.**
+### 1. Multiple Linear Regression
+- Read data from `properties.txt` and fit a regression model.
+- R: Uses `lm()`
+- Python: Uses `statsmodels.OLS`
 
----
+### 2. Model Summary
+- Print regression summary.
+- R: `summary()`
+- Python: `summary()`
 
-## Files
+### 3. Confidence Intervals
+- 99% confidence intervals for parameters.
+- R: `confint()`
+- Python: `conf_int()`
 
-- `Assignment8.r` — R script with all analysis steps.
-- `Assignment8.py` — Python script with all analysis steps.
-- `properties.txt` — Space-delimited data file (no headers) in `Datasets:UseCase/`.
+### 4. Coefficient Estimates
+- Print estimated coefficients.
+- R: `coef()`
+- Python: `params`
 
----
+### 5. Point Prediction
+- Predict mean rental rate for new property.
+- R: `predict()`
+- Python: `predict()`
+
+### 6. Confidence Interval for Prediction
+- 95% confidence interval for mean prediction.
+- R: `predict(..., interval="confidence")`
+- Python: `get_prediction().conf_int()`
+
+### 7. Prediction Interval for One Property
+- 95% prediction interval for a single property.
+- R: `predict(..., interval="prediction")`
+- Python: `get_prediction(..., obs=True).conf_int()`
+
+### 8. Mean of Residuals
+- Calculate and print mean of residuals.
+- R: `mean(residuals())`
+- Python: `resid.mean()`
+
+### 9. Residuals vs Predicted Values
+- Plot residuals against predicted values.
+- R: `plot()`
+- Python: `plt.scatter()`
+
+### 10. Histogram of Residuals
+- Plot histogram of residuals.
+- R: `hist()`
+- Python: `plt.hist()`
 
 ## How to Run
 
 ### R
-
-1. Open `Assignment8.r` in RStudio or your preferred R environment.
-2. Ensure the working directory is set so that `Datasets:UseCase/properties.txt` is accessible.
-3. Run the script. All results and plots will be printed/displayed.
+1. Open `Assignment8.r` in RStudio or VS Code.
+2. Ensure `properties.txt` is in `Datasets/UseCase/`.
+3. Run each code block as needed.
 
 ### Python
-
-1. Install required packages if needed:
-    ```bash
-    pip install pandas statsmodels matplotlib
-    ```
-2. Run `Assignment8.py` in your terminal or IDE.
-    ```bash
-    python Assignment8.py
-    ```
-3. Ensure the data file path is correct.
+1. Install required packages:
+   - `pip install pandas statsmodels matplotlib`
+2. Open `Assignment8.py` in VS Code or any Python IDE.
+3. Ensure `properties.txt` is in `Datasets/UseCase/`.
+4. Run each code block as needed.
 
 ---
 
-## Notes
-
-- The dataset must be present at `Datasets:UseCase/properties.txt` relative to the script locations.
-- Both scripts are fully commented for clarity.
-
-
----
+Created by Judah Alter, July 2025.
