@@ -1,5 +1,5 @@
-# Name: Assignment10.py
-# Description: This script answers basic python syntax and operations from Assignment 10.
+# Name: Assignment9.R
+# Description: This script answers basic R syntax and operations from Assignment 9.
 # All work is completed by Judah Alter.
 
 # 1a. Bootstrap estimate of sample 25th percentile and standard error (200 replicates)
