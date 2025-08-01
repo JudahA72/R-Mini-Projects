@@ -6,3 +6,7 @@
 plants <- read.table("Datasets:UseCase/plants.txt", header=TRUE)
 model <- lm(Yield ~ Condition, data=plants)
 summary(model)
+
+# 2. Display the ANOVA table
+anova_table <- anova(model)
+print(anova_table)

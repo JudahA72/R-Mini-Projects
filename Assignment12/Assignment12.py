@@ -8,3 +8,8 @@ import statsmodels.formula.api as smf
 plants = pd.read_csv('Datasets:UseCase/plants.txt', delim_whitespace=True)
 model = smf.ols('Yield ~ Condition', data=plants).fit()
 print(model.summary())
+
+# 2. Display the ANOVA table
+import statsmodels.api as sm
+anova_table = sm.stats.anova_lm(model, typ=2)
+print(anova_table)
