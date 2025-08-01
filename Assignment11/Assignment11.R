@@ -20,4 +20,11 @@ ggplot(mpg, aes(x=hwy, y=cty)) +
   geom_point() +
   facet_wrap(~ manufacturer) +
   labs(title="Faceted scatterplot of hwy vs cty by manufacturer")
-  
+
+# 1e. Scatterplot colored by manufacturer with a smooth regression line
+print(
+  ggplot(mpg, aes(x=hwy, y=cty, color=manufacturer)) +
+    geom_point() +
+    geom_smooth(method="lm", se=TRUE, color="blue", inherit.aes=FALSE, aes(x=hwy, y=cty)) +
+    labs(title="Scatterplot of hwy vs cty with regression line by manufacturer")
+)
