@@ -10,3 +10,15 @@ sns.scatterplot(x='hwy', y='cty', data=mpg)
 plt.xlabel('hwy')
 plt.ylabel('cty')
 plt.show()
+
+# 1b. Scatterplot of hwy vs cty colored by manufacturer
+sns.scatterplot(x='hwy', y='cty', hue='manufacturer', data=mpg)
+plt.xlabel('hwy')
+plt.ylabel('cty')
+plt.show()
+
+# 1c. Faceted scatterplot of hwy vs cty by manufacturer
+g = sns.FacetGrid(mpg, col='manufacturer', col_wrap=4)
+g.map_dataframe(sns.scatterplot, x='hwy', y='cty')
+g.set_axis_labels('hwy', 'cty')
+plt.show()
