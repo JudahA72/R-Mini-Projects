@@ -20,3 +20,4 @@ ggplot(mpg, aes(x=hwy, y=cty)) +
   geom_point() +
   facet_wrap(~ manufacturer) +
   labs(title="Faceted scatterplot of hwy vs cty by manufacturer")
+  
