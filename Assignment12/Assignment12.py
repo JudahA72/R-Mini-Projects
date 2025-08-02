@@ -13,3 +13,8 @@ print(model.summary())
 import statsmodels.api as sm
 anova_table = sm.stats.anova_lm(model, typ=2)
 print(anova_table)
+
+# 3. Pairwise comparisons using Tukey's method
+from statsmodels.stats.multicomp import pairwise_tukeyhsd
+result = pairwise_tukeyhsd(plants['Yield'], plants['Condition'])
+print(result)
